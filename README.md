@@ -18,7 +18,7 @@ Na classe de teste unitário, tem um exemplo de teste de cálculo de valor total
 #Endpoints para acessar API
 (PRODUTOS)
 https://e-commerce-gabriel.herokuapp.com/produto/ (Lista os produtos da loja) --- GET
-https://e-commerce-gabriel.herokuapp.com/order{ordem} (Lista produtos da loja por ordem (preco,score ou alfabetica)) ---POST
+https://e-commerce-gabriel.herokuapp.com/produto/order{ordem} (Lista produtos da loja por ordem (preco,score ou alfabetica)) ---POST
 
 (CARRINHO)
 https://e-commerce-gabriel.herokuapp.com/carrinho (Busca carrinho com o token identificador) ---GET
