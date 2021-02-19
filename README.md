@@ -1,13 +1,13 @@
-##API E-COMMERCE JOGOS MOBILE
+#API E-COMMERCE JOGOS MOBILE
 
-###Documentação Swagger da API E-commerce
+#Documentação Swagger da API E-commerce
 https://e-commerce-gabriel.herokuapp.com/swagger-ui/#
 ____________________________________________________________________
-####Uso de token para acessar os endopints da API(adicionar carrinho,atualizar, deletar produto do carrinho e fazer checkout)
+#Uso de token para acessar os endopints da API(adicionar carrinho,atualizar, deletar produto do carrinho e fazer checkout)
 Todos os endopoints da API do carrinho necessita passar um token por parâmetro, que vai ser o HTTP Header. Nesse caso, o token vai funcionar como um identificador para fazer requisição.
 O HTTP Header vai ser único cada vez que o usuário acessar a API. Com isso, cada carrinho criado vai ficar registrado com esse token, podendo apenas ser alterado pelo usuário que tiver o mesmo identificador(token),tanto para acessar o carrinho ou fazer checkout.
 
-###Testes de integração e unitário com JUnit
+#Testes de integração e unitário com JUnit
 
 No projeto existem 3 classes de testes (2 de integração e 1 de teste unitário).
 
@@ -15,7 +15,7 @@ Nas classes com teste de integração com a aplicação, são testados a listage
 
 Na classe de teste unitário, tem um exemplo de teste de cálculo de valor total (subtotal + valor do frete).
 
-##Endpoints para acessar API
+#Endpoints para acessar API
 (PRODUTOS)
 https://e-commerce-gabriel.herokuapp.com/produto/ (Lista os produtos da loja) --- GET
 https://e-commerce-gabriel.herokuapp.com/order{ordem} (Lista produtos da loja por ordem (preco,score ou alfabetica)) ---POST
