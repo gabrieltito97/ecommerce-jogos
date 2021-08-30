@@ -2,6 +2,7 @@ package com.ecommerce.jogos.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -39,12 +40,23 @@ public class ProdutoService {
 	}
 
 	public List<Produto> findAll() {
-		
 		return produtoRepository.findAll();
 	}
 
-	public Optional<Produto> findById(Long idProduto) {
-		return produtoRepository.findById(idProduto);
+	public Produto findById(Long idProduto) throws Exception {
+
+		Optional<Produto> prod = produtoRepository.findById(idProduto);
+		if (prod.isPresent()) {
+			return prod.get();
+		}
+		return null;
 	}
-	
+
+	public Produto createProd (Produto prod) {
+		return produtoRepository.save(prod);
+	}
+
+	public Long createProdL (Produto prod) {
+		return produtoRepository.save(prod).getId();
+	}
 }

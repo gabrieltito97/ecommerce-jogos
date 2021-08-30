@@ -28,7 +28,7 @@ public class CarrinhoService {
 		
 		if(carrinho == null) {
 			
-			Optional<Produto> produto = produtoService.findById(idProduto);
+			Optional<Produto> produto = Optional.ofNullable(produtoService.findById(idProduto));
 			
 			if(!produto.isPresent()) {
 				throw new Exception("Produto não existe");

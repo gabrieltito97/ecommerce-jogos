@@ -3,18 +3,19 @@ package com.ecommerce.jogos.response;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ecommerce.jogos.api.ProdutoResource;
 import com.ecommerce.jogos.model.Produto;
 
 public class ProdutoResponse {
-	
+
 	private Long id;
-	
+
 	private String name;
-	
+
 	private Double price;
-	
+
 	private Integer score;
-	
+
 	private String image;
 
 	public ProdutoResponse() {
@@ -76,10 +77,25 @@ public class ProdutoResponse {
 
 	public static List<ProdutoResponse> converter(List<Produto> produtos) {
 		List<ProdutoResponse> response = new ArrayList<ProdutoResponse>();
-		for (Produto produto : produtos) {
-			response.add(new ProdutoResponse(produto.getId(), produto.getName(), produto.getPrice(), produto.getScore(), produto.getImage()));
-		}
+		response.forEach(p-> {
+			response.add(new ProdutoResponse(p.getId(),p.getName(),p.getPrice(),p.getScore(),p.getImage()));
+		});
 		return response;
 	}
 
+	public static ProdutoResponse convertToProd(Produto uniqueProduct) throws Exception {
+
+		if (uniqueProduct != null) {
+			ProdutoResponse product = new ProdutoResponse(uniqueProduct.getId(), uniqueProduct.getName(), uniqueProduct.getPrice(), uniqueProduct.getScore(), uniqueProduct.getImage());
+			return product;
+		} else {
+			throw new Exception("Não foi encontrado nenhum produto");
+		}
+
+
+	}
+
+
 }
+
+
